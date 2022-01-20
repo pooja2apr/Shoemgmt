@@ -1,0 +1,24 @@
+<!DOCTYPE html>
+<html lang="en" xmlns:th="http://www.thymeleaf.org">
+<head>
+<meta charset="ISO-8859-1">
+<title>Admin Login Form</title>
+ <link rel="stylesheet" href="https://stackpath.bootstrapcdn.com/bootstrap/4.1.3/css/bootstrap.min.css" integrity="sha384-MCw98/SFnGE8fJT3GXwEOngsV7Zt27NXFoaoApmYm81iuXoPkFOJwJ8ERdknLPMO" crossorigin="anonymous">
+</head>
+<body>
+<div class="container my-2">
+ <h1>Admin login form</h1>
+  <a th:href="@{/showRegisterForm}" class="btn btn-primary btn-sm mb-3"> Register </a>  
+         <form action="#" th:action="@{/checkAdmin}" th:object="${admin}" method="POST">
+            <input type="text" th:field="*{email}" placeholder="Email" class="form-control mb-4 col-4">
+
+            <input type="password" th:field="*{password}" placeholder="Password" th:id="password" autocomplete="off" class="form-control mb-4 col-4">
+
+            <button type="submit" class="btn btn-info col-2"> Login </button> 
+           <a th:href="@{/showFormForUpdate}" class="btn btn-primary">Update</a>
+         </form>
+        
+    </div>
+    
+</body>
+</html>
